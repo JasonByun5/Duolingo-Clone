@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import {ClerkLoading, 
         ClerkLoaded,
         SignInButton,
-        SignUpButton,
         SignedIn,
         SignedOut,
         UserButton,} from "@clerk/nextjs";
