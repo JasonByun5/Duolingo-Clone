@@ -1,7 +1,9 @@
-import { getCourses } from "@/db/queries";
-import { List} from "./List";
-const CoursesPage = async () =>{
+import { getCourses, getUserProgress } from "@/db/queries";
+import { List} from "./list";
 
+
+const CoursesPage = async () =>{
+    const userProgress = await getUserProgress();
     const courses = await getCourses();
 
     return(
@@ -11,7 +13,7 @@ const CoursesPage = async () =>{
             </h1>
             <List 
                 courses = {courses}
-                activeCourseId={1}
+                activeCourseId={userProgress?.activeCourseId}
             />
         </div>
     );
