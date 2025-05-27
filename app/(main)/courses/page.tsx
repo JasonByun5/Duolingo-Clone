@@ -3,8 +3,16 @@ import { List} from "./list";
 
 
 const CoursesPage = async () =>{
-    const userProgress = await getUserProgress();
-    const courses = await getCourses();
+    const userProgressData = getUserProgress();
+    const coursesData = getCourses();
+
+    const[
+        courses,
+        userProgress,
+    ] = await Promise.all([
+        coursesData,
+        userProgressData,
+    ]);
 
     return(
         <div className="h-full max-w-[912px] px-3 mx-auto">
